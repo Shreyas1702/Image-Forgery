@@ -1,4 +1,3 @@
-
 from flask import Flask,redirect
 from flask import request
 import json
@@ -10,7 +9,6 @@ def home():
     data=request.data
     datat=data.decode()
     person = json.loads(datat)
-    # print(type(person))
     print(person)
     
     return 'Hi'
@@ -22,4 +20,4 @@ def go():
 
     
 if __name__ == "__main__":
-    app.run(debug=True,port=3000)
+    app.run(debug=True,port=5000)
