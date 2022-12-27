@@ -29,8 +29,9 @@ const footer = () => {
       <img src="img/icon.png" alt="Logo" class="footer__logo" />
       <p class="footer__copyright">
         &copy; Copyright by 
-        <a class="footer__link twitter-link" target="_blank" href="#">  Sahil Shreyas Aakarsh Andre Bilal Shoydon</a>.
+        <a class="footer__link twitter-link" target="_blank" href="#"> Auxtribe</a>.
       </p>
+      <p>Made by : <span> Sahil Shreyas Aakarsh Andre Bilal Shoydon</span></p>
     </div>
   )
 }

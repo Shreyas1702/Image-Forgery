@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import './index.css'
-import axios from 'axios'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import React, { useEffect } from "react";
+import "./index.css";
+import axios from "axios";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import Login from './component/Login'
-import Home from './component/Home'
-import SignIn from './component/SignIn'
-import Footer from './component/Footer'
-import LandingPage from './component/LandingPage'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import Login from "./component/Login";
+import Home from "./component/Home";
+import SignIn from "./component/SignIn";
+import Footer from "./component/Footer";
+import LandingPage from "./component/LandingPage";
+import { GiHamburgerMenu } from "react-icons/gi";
 function App() {
-  const [showMediaIcons, setShowMediaIcons] = React.useState(false)
+  const [showMediaIcons, setShowMediaIcons] = React.useState(false);
   return (
     <div className="App">
       <BrowserRouter className="nav">
@@ -18,40 +18,33 @@ function App() {
           <div className="heading">
             <h2>Home Page</h2>
           </div>
-          <div className={showMediaIcons ? 'mobile-menu-link' : 'links'}>
+          <div className={showMediaIcons ? "mobile-menu-link" : "links"}>
             <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              {/* <li class="nav__item">
-                <button
-                  style="
-                font-size: 1.7rem;
-                font-weight: 400;
-                color: inherit;
-                border: none;
-              "
-                  onClick={() => {
-                    window.scroll({
-                      top: 1000,
-                      behavior: 'smooth',
-                    })
-                  }}
-                >
-                  Articles
-                </button>
-              </li> */}
               <li>
                 <Link
                   onClick={() => {
-                    window.scroll({
-                      top: 800,
-                      behavior: 'smooth',
-                    })
+                    if (window.location.href.match("http://localhost:3000")) {
+                      window.scroll({
+                        top: 800,
+                        behavior: "smooth",
+                      });
+                    } else {
+                      console.log(window.location.href);
+                      // window.location.replace("http://localhost:3000");
+                      setTimeout(() => {
+                        window.scroll({
+                          top: 800,
+                          behavior: "smooth",
+                        });
+                      }, 10000);
+                    }
                   }}
                 >
                   Articles
                 </Link>
+              </li>
+              <li>
+                <Link to="/home">Home</Link>
               </li>
               <hr className="horizontal" />
               <li>
@@ -78,7 +71,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
