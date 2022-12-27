@@ -8,7 +8,7 @@ import Home from './component/Home'
 import SignIn from './component/SignIn'
 import Footer from './component/Footer'
 import LandingPage from './component/LandingPage'
-// import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi'
 function App() {
   const [showMediaIcons, setShowMediaIcons] = React.useState(false)
   return (
@@ -64,9 +64,9 @@ function App() {
             </ul>
           </div>
           <div className="hamburger-menu">
-            {/* <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <GiHamburgerMenu />
-            </a> */}
+            </a>
           </div>
         </div>
 
