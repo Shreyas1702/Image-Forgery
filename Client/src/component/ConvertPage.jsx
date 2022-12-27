@@ -3,8 +3,9 @@ import axios from 'axios';
 const ConvertPage = () => {
 
 const [uploadedFile, setLink] = React.useState(null);
-
+const [response , setResponse] = React.useState(null);
 const [submit, setSubmit] = React.useState("false");
+const [change, setChange] = React.useState("false");
 
 React.useEffect(() => {
   if (submit == true) {
@@ -15,19 +16,19 @@ React.useEffect(() => {
     console.log(formData);
     axios({
     method: 'post',
-    url: 'http://localhost:8000/upload',
+    url: 'http://localhost:8000/api/audio',
     data: formData,
     config: { headers: { 'Content-Type': 'multipart/form-data' } }
-  })
-      .then((response) => {
-        console.log(response.data);
+  }).then((response) => {
+        setResponse(response.data);
+        setChange(true);
       })
       .catch((e) => {
         console.log(e);
       });
     setSubmit(false);
   }
-}, [submit, uploadedFile]);
+}, [submit, uploadedFile , change , response]);
 
 function submits(e) {
   if (uploadedFile != "") {
@@ -59,10 +60,6 @@ function validateData(event) {
               <input type="file" name="uploadedFile" onChange={(e) => validateData(e)} /> <br /> <br />
               <input type="submit" value="Upload File" />
             </form>
-             {/* <input type="file" name="link" id='choosebtn' onChange={(e) => validateData(e)}></input>
-             <label for="choosebtn" className='button'>Choose File</label>
-            <br></br>
-            <button class="button" role="button" name="submit" onClick={() => submits()}>Submit</button> */}
           </div>
         </div>
     </div>
