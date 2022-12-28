@@ -26,12 +26,12 @@ const footer = () => {
           <a class="footer__link" href="#">Contact Us</a>
         </li>
       </ul>
-      <img src="img/icon.png" alt="Logo" class="footer__logo" />
+      <img id='ft_logo' src="img/icon.png" alt="Logo" class="footer__logo" />
       <p class="footer__copyright">
         &copy; Copyright by 
         <a class="footer__link twitter-link" target="_blank" href="#"> Auxtribe</a>.
       </p>
-      <p>Made by : <span> Sahil Shreyas Aakarsh Andre Bilal Shoydon</span></p>
+      <p class="footer_p">Made by : <span> Sahil Shreyas Aakarsh Andre Bilal Shoydon</span></p>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 const ConvertPage = () => {
 
 const [uploadedFile, setLink] = React.useState(null);
-const [response , setResponse] = React.useState(null);
+const [response , setResponse] = React.useState("");
 const [submit, setSubmit] = React.useState("false");
 const [change, setChange] = React.useState("false");
 
@@ -20,6 +20,7 @@ React.useEffect(() => {
     data: formData,
     config: { headers: { 'Content-Type': 'multipart/form-data' } }
   }).then((response) => {
+        console.log(response.data);
         setResponse(response.data);
         setChange(true);
       })
@@ -27,6 +28,11 @@ React.useEffect(() => {
         console.log(e);
       });
     setSubmit(false);
+  }
+
+  if(change == true){
+    console.log(response)
+    setChange(false)
   }
 }, [submit, uploadedFile , change , response]);
 
@@ -49,14 +55,16 @@ function validateData(event) {
   return (
     <div className='convert'>
         <div className="text">
-          <div className='content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, modi quia esse voluptatem repudiandae inventore iure. Veritatis, maxime itaque. Consequuntur maiores ipsa sequi. Magni praesentium ad, magnam veniam ipsa velit explicabo illum est suscipit exercitationem enim, temporibus accusamus hic repellat cupiditate? Suscipit voluptatum doloremque itaque velit excepturi alias natus aut. Debitis porro fuga repellendus alias adipisci. Impedit dolor odio nesciunt quas rerum itaque error commodi blanditiis ipsum incidunt quibusdam temporibus cum provident praesentium, obcaecati ad omnis laboriosam porro ex eius iure est soluta. Debitis hic amet quia magni blanditiis, excepturi veniam ab fugit laudantium illum aut quasi molestiae rem facilis nesciunt modi ipsum! Cupiditate dolorum vel nesciunt animi necessitatibus ratione placeat, tempore debitis eaque maxime at incidunt quasi aliquid esse magni molestiae aperiam commodi voluptas repellat ex repellendus delectus totam. Veniam, modi consequuntur at in repudiandae repellat facere vel omnis quasi aspernatur, atque ipsam. Porro id velit officia labore at provident vero excepturi sequi cupiditate vitae nisi itaque quis deleniti suscipit, molestias consectetur ut earum? Aut, enim dolores. Iste assumenda voluptatum corporis dolorum tenetur hic velit voluptas dolores, asperiores mollitia possimus soluta ipsum suscipit amet voluptate harum dolorem est dolor corrupti esse repellat! Eaque assumenda veritatis sint nihil consectetur, odit officia et minima maxime cumque quidem accusamus! Nam, fuga facilis corporis ducimus illum autem vitae maxime, dignissimos similique placeat consequatur quisquam in, ex excepturi fugit. Placeat, obcaecati consequuntur. Repudiandae voluptate nulla est consectetur suscipit repellat maxime amet eos aperiam illum! Ipsum, voluptas hic distinctio cupiditate itaque vel fugit quibusdam voluptatibus odit rem aperiam asperiores natus impedit, architecto amet omnis ut qui beatae, porro delectus esse pariatur tempora dolor reprehenderit. Nesciunt officia laboriosam perspiciatis ad repellat quos minima magni delectus ex. Doloremque amet rem ea veritatis laboriosam. Voluptatum autem eveniet veritatis iste veniam facere velit omnis, aliquid earum, accusamus, laboriosam dolorem?</div>
+          <div className='content'>
+            <p>{response}</p>
+          </div>
         </div>
         <div className="upload">
           <h1 className='converth1'>Audio to Text Converter</h1>
           <p>Transcribe speech to text. Automatic audio transcription online, in a few clicks</p>
           <div className="buttons">
             <form onSubmit={(e)=>submits(e)} enctype="multipart/form-data">
-              <input type="text" name="name" placeholder="File Name.." /><br />
+              <input class="holder" type="text" name="name" placeholder="File Name.." /><br />
               <input type="file" name="uploadedFile" onChange={(e) => validateData(e)} /> <br /> <br />
               <input type="submit" value="Upload File" />
             </form>
