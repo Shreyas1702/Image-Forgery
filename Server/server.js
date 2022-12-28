@@ -67,6 +67,11 @@ passport.use(new localpassport(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 app.post("/signin", async (req, res) => {
   try {
     const { email, username, password } = req.body;
@@ -109,6 +114,28 @@ app.post(
     }
   }
 );
+
+app.get("/user", (req, res) => {
+  console.log(currentUser);
+  if (req.user) {
+    res.status(200).json({
+      data: "true",
+    });
+  } else {
+    res.status(200).json({
+      data: "false",
+    });
+  }
+});
+
+app.get("/logout", (req, res) => {
+  req.logout(function (err) {
+    if (err) {
+      console.log(err);
+    }
+    console.log("Logging Out");
+  });
+});
 
 // app.post(
 //   "/login",
@@ -159,7 +186,7 @@ router.get("/download", (req, res) => {
 app.use(fileUpload());
 
 router.post("/upload", (req, res) => {
-  // console.log(req.files.uploadedFile.data);
+  console.log(req.files);
   let file = { file: binary(req.files.uploadedFile.data) };
   axios
     .post("http://127.0.0.1:5000/sum", file, "utf-8")

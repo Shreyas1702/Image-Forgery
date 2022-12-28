@@ -15,6 +15,7 @@ const LandingPage = () => {
         <h4>Automatic audio transcription online, in a few clicks</h4>
         <a href='http://localhost:3000/home' class="btn btn--show-modal"> Getting Started </a>
         <img
+        id="i100"
           src="img/hero.png"
           class="header__img"
           alt="Minimalist bank items"
@@ -42,7 +43,7 @@ const LandingPage = () => {
               <use xlinkHref="img/icons.svg#icon-monitor"></use>
             </svg>
           </div>
-          <h5 class="features__header">100% accuracy</h5>
+          <h5 class="features__header">Easy to use</h5>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
             sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
@@ -67,7 +68,7 @@ const LandingPage = () => {
           src="img/grow-lazy.jpg"
           data-src="img/grow.jpg"
           alt="Plant"
-          class="features__img lazy-img"
+          class="grow features__img lazy-img"
         />
 
         <img

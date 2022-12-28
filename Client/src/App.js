@@ -11,6 +11,22 @@ import LandingPage from "./component/LandingPage";
 import { GiHamburgerMenu } from "react-icons/gi";
 function App() {
   const [showMediaIcons, setShowMediaIcons] = React.useState(false);
+  const [logged, setLogged] = React.useState(false);
+
+  function logout() {
+    axios.get("http://localhost:8000/logout");
+    setLogged(false);
+  }
+
+  React.useEffect(() => {
+    axios.get("http://localhost:8000/user").then((response) => {
+      console.log(response.data.data);
+      if (response.data.data === "true") {
+        console.log(true);
+        setLogged(true);
+      }
+    });
+  }, [logged]);
   return (
     <div className="App">
       <BrowserRouter className="nav">
@@ -48,11 +64,29 @@ function App() {
               </li>
               <hr className="horizontal" />
               <li>
-                <Link to="/login">Login</Link>
+                <Link
+                  style={{ display: logged ? "none" : "block" }}
+                  to="/login"
+                >
+                  Login
+                </Link>
               </li>
               <hr className="horizontal" />
               <li>
-                <Link to="/signin">Sign In</Link>
+                <Link
+                  style={{ display: logged ? "none" : "block" }}
+                  to="/signin"
+                >
+                  Sign In
+                </Link>
+              </li>
+              <li>
+                <Link
+                  style={{ display: logged ? "block" : "none" }}
+                  onClick={() => logout()}
+                >
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>
