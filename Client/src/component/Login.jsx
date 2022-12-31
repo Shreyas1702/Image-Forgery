@@ -1,8 +1,13 @@
 import axios from 'axios'
 import React from 'react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../App'
 import './../index.css'
 const Login = () => {
+
+  const {state , dispatch} = useContext(UserContext)
+
   const navigate  = useNavigate()
   const [data , setData] = React.useState({
     username: "",
@@ -17,12 +22,15 @@ const Login = () => {
             console.log(data)
             axios.post("http://localhost:8000/login", data)
                 .then((response) => {
-                    console.log(response);
-                    console.log(response)
-                    Reset()
-                    navigate('/')
+                    console.log(response.status);
+                    if(response.status == 200){
+                      dispatch({type:"USER",payload:true})
+                      Reset()
+                      navigate('/')
+                    }
                 })
                 .catch((e) => {
+                  window.alert('Invalid Cerdentials')
                     console.log(e);
                     Reset()
                 });

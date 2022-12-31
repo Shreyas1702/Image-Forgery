@@ -8,7 +8,7 @@
   padding: 0rem;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -60,8 +60,8 @@ html{
 
 a {
   position: relative;
-  top: -0.9rem;
-  padding: 0rem 0rem 2rem 0rem;
+  /* top: -0.9rem; */
+  padding: 0rem 0rem 0rem 0rem;
   text-decoration: none;
   color: black;
 }
@@ -151,16 +151,16 @@ img {
   margin-bottom: 1rem;
 }
 
-/**********************************Navbar***********************************/
+/***********Navbar************/
 .navbar {
   display: flex;
   flex-direction: row;
   height: 8rem;
   width: 100%;
   z-index: 5;
-  
+
   box-shadow: 0rem 0.5rem 0.5rem grey;
-  background-image: linear-gradient(to right, #b77474, #fdfa60); /*#f3f3f3, #ffffff);*/
+  background-image: linear-gradient(to right, #b77474, #fdfa60);
   position: fixed;
   top: 0;
 }
@@ -193,6 +193,7 @@ img {
 .links li a {
   color: black;
   text-decoration: none;
+  top: -0.9rem;
   padding: 1.5rem;
   background-color: #f7f7f8;
   border-radius: 1.5rem;
@@ -203,8 +204,7 @@ img {
   display: none;
 }
 
-
-/**************************LandingPage***********************/
+/*********LandingPage********/
 
 .header {
   height: 6vh;
@@ -270,7 +270,7 @@ h4 {
   background-image: var(--gradient-primary);
 }
 
-#i100{
+#i100 {
   margin-top: 0%;
   /* transform: translateY(-50%); */
 }
@@ -288,7 +288,7 @@ h4 {
   background-image: var(--gradient-primary);
 } */
 
-/*************************** Detail Page *********************/
+/********* Detail Page *******/
 
 .detail {
   width: 100%;
@@ -384,7 +384,7 @@ h4 {
   text-align: center;
 }
 
-/*********************Convert*****************************/
+/********Convert**********/
 
 .convert {
   width: 100%;
@@ -403,9 +403,22 @@ h4 {
   height: 50rem;
   border: 0.1rem solid black;
   margin: 5rem 5rem 2rem 5rem;
-  border-radius: 1.5rem;
+  border-radius: 0.7rem;
   overflow: hidden;
   overflow-y: scroll;
+}
+
+.text::-webkit-scrollbar {
+  width: 15px;
+  height: 7rem;
+}
+.text::-webkit-scrollbar-track {
+  background-color: darkgrey;
+  border-radius: 14px;
+}
+.text::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .text .content {
@@ -426,75 +439,7 @@ h4 {
   font-size: 2rem;
 }
 
-
-@media (max-width: 600px) {
-  .cards {
-    flex-direction: column;
-    height: 200rem;
-  }
-
-  .detail {
-    height: 220rem;
-  }
-
-  .card1 {
-    height: 100rem;
-    width: 50%;
-    border-radius: 1.5rem;
-    background-color: white;
-    box-shadow: 1rem 0.5rem 0.5rem grey;
-    position: absolute;
-    z-index: -1;
-    align-self: center;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card2 {
-    height: 100rem;
-    width: 50%;
-    border-radius: 1.5rem;
-    z-index: -1;
-    background-color: white;
-    box-shadow: 1rem 0.5rem 0.5rem grey;
-    position: absolute;
-    align-self: center;
-    margin-left: 22rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card3 {
-    height: 100rem;
-    width: 50%;
-    z-index: -1;
-    border-radius: 1.5rem;
-    background-color: white;
-    box-shadow: 1rem 0.5rem 0.5rem grey;
-    position: absolute;
-    align-self: center;
-    margin-left: 38rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .footer {
-    width: 100%;
-    background-color: #d3d3d3;
-    color: black;
-    text-align: center;
-    padding-top: 1rem;
-    position: absolute;
-  }
-}
-
-/***************************button****************************/
+/**********button*********/
 .upload .buttons {
   display: flex;
   flex-direction: row;
@@ -503,6 +448,10 @@ h4 {
 
 input.holder {
   display: none;
+}
+
+.buttons input[type="file"] {
+  width: 50%;
 }
 
 .button {
@@ -516,7 +465,7 @@ input.holder {
   margin-left: 3rem;
   margin-right: 3rem;
   font-family: Phantomsans, sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   justify-content: center;
   line-height: 1em;
   max-width: 100%;
@@ -535,17 +484,7 @@ input.holder {
   outline: 0;
 }
 
-@media (max-width: 900px) {
-  .upload .btn {
-    flex-direction: column;
-  }
-  .button {
-    font-size: 2.4rem;
-    min-width: 10rem;
-  }
-}
-
-/*********************footer ***************************/
+/********footer **********/
 .footer {
   width: 100%;
   background-color: #d3d3d3;
@@ -591,16 +530,16 @@ input.holder {
   text-align: center;
 }
 
-.footer__copyright .footer__link {
+.footer_copyright .footer_link {
   font-size: 1.4rem;
   top: 0rem;
 }
 
-#ft_logo{
+#ft_logo {
   margin: 2rem 2rem;
 }
 
-/**********************Login******************************/
+/*******Login***********/
 .logbody {
   width: 100%;
   height: 100vh;
@@ -610,60 +549,12 @@ input.holder {
 }
 
 .login {
-  margin-top: 20rem;
+  margin-top: 17rem;
   background-color: #ffffff;
-  width: 30%;
+  width: 45%;
   height: 50rem;
   box-shadow: 1rem 0.5rem 0.5rem grey;
   border-radius: 1.5rem;
-}
-
-@media (max-width: 1600px) {
-  .login {
-    width: 35%;
-  }
-}
-
-@media (max-width: 1400px) {
-  .login {
-    width: 40%;
-  }
-  .logform input {
-    width: 23rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .login {
-    width: 50%;
-  }
-  .logform input {
-    width: 10rem;
-  }
-  .logform {
-    margin-left: 1rem;
-  }
-
-  .lbutton {
-    width: 5rem;
-  }
-}
-
-@media (max-width: 950px) {
-  .login {
-    width: 60%;
-  }
-  .logform input {
-    height: 1rem;
-    width: 10rem;
-  }
-  .logform {
-    margin-left: 1rem;
-  }
-
-  .lbutton {
-    width: 5rem;
-  }
 }
 
 .login h3 {
@@ -681,7 +572,7 @@ input.holder {
 
 .logform input {
   margin-top: 1rem;
-  width: 40rem;
+  width: 90%;
   height: 4.5rem;
   font-size: 2rem;
   border: 0.1rem solid #f3f3f3;
@@ -691,7 +582,7 @@ input.holder {
 
 .lbutton {
   margin-top: 2rem;
-  width: 40rem;
+  width: 95%;
   border-radius: 1rem;
   background-color: #ee5784;
   border: none;
@@ -710,7 +601,7 @@ input.holder {
   color: black;
 }
 
-/*******************Sign In ***************************/
+/******Sign In **********/
 .signbody {
   width: 100%;
   height: 100vh;
@@ -720,10 +611,11 @@ input.holder {
 }
 
 .signin {
-  margin-top: 15rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   background-color: #ffffff;
   width: 30%;
-  height: 68rem;
+  height: 63rem;
   box-shadow: 1rem 0.5rem 0.5rem grey;
   border-radius: 1.5rem;
 }
@@ -733,70 +625,16 @@ input.holder {
   font-weight: 400;
   margin-left: 6rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .signform {
   font-size: 2rem;
   margin-left: 6rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 1600px) {
-  .signin {
-    width: 35%;
-  }
-}
-
-@media (max-width: 1400px) {
-  .signin {
-    width: 40%;
-  }
-  .signinform input {
-    width: 23rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .signin {
-    width: 50%;
-    left: 25%;
-  }
-  .signform input {
-    width: 10rem;
-  }
-  .signform {
-    margin-left: 3rem;
-  }
-
-  .sbutton {
-    width: 5rem;
-  }
-}
-
-@media (max-width: 950px) {
-  .signin {
-    width: 60%;
-    left: 10%;
-  }
-  .signform input {
-    height: 1rem;
-    width: 10rem;
-  }
-  .signform {
-    margin-left: 2rem;
-  }
-
-  .signin h3 {
-    margin-left: 2rem;
-  }
-
-  .sbutton {
-    width: 5rem;
-  }
 }
 
 .signform input {
-  margin-top: 1rem;
+  margin-top: 0.2rem;
   width: 40rem;
   height: 4.5rem;
   font-size: 2rem;
@@ -806,8 +644,7 @@ input.holder {
 }
 
 .sbutton {
-  margin-top: 2rem;
-  width: 40rem;
+  width: 92%;
   border-radius: 1rem;
   background-color: #ee5784;
   border: none;
@@ -826,7 +663,7 @@ input.holder {
   color: black;
 }
 
-/******************************Reason***************************************/
+/***********Reason**************/
 
 .reason {
   width: 100%;
@@ -891,7 +728,122 @@ input.holder {
   padding-top: 2.5rem;
 }
 
-/*********************************************************Mobile menu link*********************************************************/
+/********************Mobile menu link********************/
+@media (max-width: 1600px) {
+  .signin {
+    width: 35%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .signin {
+    width: 60%;
+  }
+  .signinform input {
+    width: 23rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .card1 {
+    height: 44rem;
+    width: 20%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 13rem;
+    margin-right: 6rem;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .card2 {
+    height: 44rem;
+    width: 20%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+  .card3 {
+    height: 44rem;
+    width: 20%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 6rem;
+    margin-right: 13rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+
+  .upload .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .upload .buttons input[type="file"] {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .signin {
+    width: 50%;
+    left: 25%;
+  }
+  .signform {
+    margin-left: 3rem;
+  }
+  .signin h3 {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .card1 {
+    height: 44rem;
+    width: 23%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 10rem;
+    margin-right: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .card2 {
+    height: 44rem;
+    width: 23%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+  .card3 {
+    height: 44rem;
+    width: 23%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 3rem;
+    margin-right: 10rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+}
 
 @media (max-width: 1000px) {
   .navbar {
@@ -900,25 +852,62 @@ input.holder {
     height: 7.5rem;
     grid-template-columns: 2rem 5fr 3fr 2rem;
   }
-
-  .header img{
+  .header img {
     margin-top: 1rem;
   }
-  .features{
+
+  .card1 {
+    height: 44rem;
+    width: 25%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .card2 {
+    height: 44rem;
+    width: 25%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+  .card3 {
+    height: 44rem;
+    width: 25%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 2rem;
+    margin-right: 7rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+
+  .features {
     margin: 0rem 1.5rem;
   }
-  .features__img{
+  .features__img {
     grid-column-start: 1;
     grid-column-end: 3;
   }
 
-  .features__feature{
+  .features__feature {
     grid-column-start: 1;
     grid-column-end: 3;
     width: 100%;
   }
 
-  .grow{
+  .grow {
     grid-row-start: 3;
     grid-row-end: 4;
   }
@@ -927,7 +916,7 @@ input.holder {
     padding: 0rem 0rem 2rem 0rem;
   } */
 
-  .navbar a{
+  .navbar a {
     margin: 1.5rem 9rem 1.5rem 5rem;
   }
 
@@ -939,7 +928,7 @@ input.holder {
   .heading {
     /* display: grid; */
     width: 20rem;
-    
+
     /* font-size: 3rem; */
     /* height: 7rem; */
   }
@@ -960,10 +949,9 @@ input.holder {
   .mobile-menu-link {
     background-color: white;
     width: 67%;
-    height: 18rem;
+    height: 28rem;
     display: grid;
     grid-column: 3/5;
-    align-items: center;
     position: relative;
     padding-left: 3rem;
     transition: all 2s linear;
@@ -990,7 +978,7 @@ input.holder {
   .mobile-menu-link ul li {
     list-style-type: none;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .mobile-menu-link ul li:first-child {
@@ -1043,43 +1031,104 @@ input.holder {
     margin-bottom: 1rem;
   }
 
-  p{
+  .login p {
     color: #666;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .footer_p {
     font-size: 2.5rem;
   }
+
+  .upload {
+    margin-top: 9rem;
+  }
 }
 
 @media (max-width: 900px) {
-  html{
+  html {
     font-size: 55%;
   }
-
   .navbar {
     width: 100%;
     display: grid;
     height: 7rem;
     grid-template-columns: 2rem 5fr 3fr 2rem;
   }
-
   .links {
     display: none;
     width: 1rem;
   }
-
   .heading h2 {
     /* display: grid; */
     /* width: 4rem; */
     font-size: 3rem;
     /* height: 7rem; */
   }
+  .upload .btn {
+    flex-direction: column;
+  }
+  .button {
+    font-size: 2.4rem;
+    min-width: 10rem;
+  }
+  .signin {
+    height: 60rem;
+    width: 60%;
+    left: 10%;
+  }
+  .signform input {
+    height: 4rem;
+    width: 97%;
+  }
+  .signform {
+    margin-left: 2rem;
+  }
+
+  .signin h3 {
+    margin-left: 2rem;
+  }
+
+  .card1 {
+    height: 44rem;
+    width: 25%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 8rem;
+    margin-right: 2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .card2 {
+    height: 44rem;
+    width: 25%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
+  .card3 {
+    height: 44rem;
+    width: 25%;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    margin-left: 2rem;
+    margin-right: 8rem;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+  }
 }
 
-@media(max-width: 800px){
-  html{
+@media (max-width: 800px) {
+  html {
     font-size: 50%;
   }
   .convert {
@@ -1090,13 +1139,11 @@ input.holder {
     align-items: center;
     margin-top: 0rem;
   }
-
   .detail .detailh1 {
     font-size: 4rem;
     padding-top: 50rem;
     text-align: center;
   }
-
   .text {
     width: 60%;
     height: 50rem;
@@ -1106,15 +1153,13 @@ input.holder {
     overflow: hidden;
     overflow-y: scroll;
   }
-
   .reason {
     width: 100%;
     height: 130rem;
     display: flex;
     flex-direction: column;
-    margin-top: 45rem;
+    margin-top: 180rem;
   }
-
   .col-1 {
     display: flex;
     flex-direction: column;
@@ -1156,8 +1201,62 @@ input.holder {
     font-size: 2.5rem;
     padding-top: 2.5rem;
   }
-
+  .cards {
+    flex-direction: column;
+    height: 200rem;
+    width: 100%;
+    position: relative;
+    top: 0rem;
+  }
   .card1 {
+    height: 100rem;
+    width: 50%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    z-index: -1;
+    align-self: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card2 {
+    height: 100rem;
+    width: 50%;
+    border-radius: 1.5rem;
+    z-index: -1;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    align-self: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card3 {
+    height: 100rem;
+    width: 50%;
+    z-index: -1;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    align-self: center;
+    margin-left: 0rem;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    margin-right: 0rem;
+    position: relative;
+    overflow: hidden;
+  }
+  /* .card1 {
     margin-left: 0rem;
     margin-right: 0rem;
     margin-top: 5rem;
@@ -1176,13 +1275,17 @@ input.holder {
     margin-right: 0rem;
     margin-top: 2.5rem;
     margin-bottom: 2rem;
-  }
+  } */
 
   .upload .buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 5rem;
+  }
+
+  .button {
+    width: 40%;
   }
 
   .card-1 h2 {
@@ -1202,11 +1305,11 @@ input.holder {
   .upload p {
     padding-top: 2rem;
     font-size: 3rem;
-}
+  }
 }
 
-@media(max-width: 700px){
-  html{
+@media (max-width: 700px) {
+  html {
     font-size: 45%;
   }
 
@@ -1252,28 +1355,97 @@ input.holder {
     background-image: var(--gradient-primary);
   }
 
-  #i100{
+  #i100 {
     margin-top: 50%;
     transform: translateY(-50%);
   }
 }
 
-@media(max-width: 600px){
-  html{
+@media (max-width: 600px) {
+  html {
     font-size: 40%;
   }
-
+  .detail {
+    height: 220rem;
+  }
+  .cards {
+    flex-direction: column;
+    height: 200rem;
+  }
+  .card1 {
+    height: 100rem;
+    width: 50%;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    z-index: -1;
+    align-self: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card2 {
+    height: 100rem;
+    width: 50%;
+    border-radius: 1.5rem;
+    z-index: -1;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    align-self: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card3 {
+    height: 100rem;
+    width: 50%;
+    z-index: -1;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 1rem 0.5rem 0.5rem grey;
+    position: absolute;
+    align-self: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .reason {
+    width: 100%;
+    height: 130rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50rem;
+  }
+  .footer {
+    width: 100%;
+    background-color: #37383d;
+    color: black;
+    text-align: center;
+    bottom: 0rem;
+    padding-top: 1rem;
+    position: relative;
+  }
 }
 
-@media(max-width: 500px){
-  html{
+@media (max-width: 500px) {
+  html {
     font-size: 35%;
   }
 }
 
-@media(max-width: 400px){
-  html{
+@media (max-width: 400px) {
+  html {
     font-size: 30%;
   }
 }
-

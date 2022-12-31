@@ -8,8 +8,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-#load the model
-model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/api/audio", methods=['GET', 'POST'])
 def hello():

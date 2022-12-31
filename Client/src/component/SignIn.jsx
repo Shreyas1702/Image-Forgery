@@ -1,8 +1,13 @@
 import axios from 'axios';
 import React from 'react'
+import { useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { UserContext } from '../App'
+
 
 const SignIn = () => {
+     const {state , dispatch} = useContext(UserContext)
+
 
     const navigate = useNavigate();
 
@@ -20,11 +25,14 @@ const SignIn = () => {
             console.log(data)
             axios.post("http://localhost:8000/signin", data)
                 .then((response) => {
-                    console.log(response);
-                    Reset()
-                    navigate('/')
+                    if(response.status == 200){
+                      dispatch({type:"USER",payload:true})
+                      Reset()
+                      navigate('/')
+                    }
                 })
                 .catch((e) => {
+                    window.alert("Something Went Wrong..!");
                     console.log(e);
                     Reset()
                 });
@@ -49,13 +57,17 @@ function change(e){
 const isEmail = (email) =>
   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
-    function validatedata(e){
+function validatedata(e){
         
         e.preventDefault()
         if(data.uname != "" && data.email != "" && data.password != "" && data.cpassword != ""){
             if(isEmail(data.email) && data.password === data.cpassword){
                 setPost(true)
+            }else{
+                window.alert("Your Password Does'nt Match");
             }
+    }else{
+        window.alert("Fill all the fields");
     }
     }
   return (

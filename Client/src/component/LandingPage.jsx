@@ -2,98 +2,115 @@ import React from 'react'
 import Footer from './Footer'
 const LandingPage = () => {
   return (
-    <div class="header">
-        <div class="header__title">
+    <div className="header">
+      <div className="header__title">
         {/* <!-- <h1 onclick="alert('HTML alert')"> --> */}
-        <h1 className='landingh1'>
+        <h1 className="landingh1">
           Change
           {/* <!-- Green highlight effect --> */}
-          <span class="highlight">     Audio</span>
-          to<br />
-          <span class="highlight">     Text</span>
+          <span className="highlight"> Audio</span>
+          to
+          <br />
+          <span className="highlight"> Text</span>
         </h1>
         <h4>Automatic audio transcription online, in a few clicks</h4>
-        <a href='http://localhost:3000/home' class="btn btn--show-modal"> Getting Started </a>
+        <a href="http://localhost:3000/home" className="btn btn--show-modal">
+          {' '}
+          Getting Started{' '}
+        </a>
         <img
-        id="i100"
-          src="img/hero.png"
-          class="header__img"
+          id="i100"
+          src={process.env.PUBLIC_URL + '/img/collage.jpeg'}
+          className="header__img"
           alt="Minimalist bank items"
         />
       </div>
 
-    <section class="section" id="section--1">
-      <div class="section__title">
-        <h2 class="section__description">Articles</h2>
-        <h3 class="section__header">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos!
-        </h3>
-      </div>
-
-      <div class="features">
-        <img
-          src="img/digital-lazy.jpg"
-          data-src="img/digital.jpg"
-          alt="Computer"
-          class="features__img lazy-img"
-        />
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlinkHref="img/icons.svg#icon-monitor"></use>
-            </svg>
-          </div>
-          <h5 class="features__header">Easy to use</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
-            sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
-            debitis ducimus.
-          </p>
+      <section className="section" id="section--1">
+        <div className="section__title">
+          <h2 className="section__description">Articles</h2>
+          <h3 className="section__header">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dignissimos!
+          </h3>
         </div>
 
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlinkHref="img/icons.svg#icon-trending-up"></use>
-            </svg>
+        <div className="features">
+          <img
+            src={process.env.PUBLIC_URL + '/img/easy.jpeg'}
+            data-src={process.env.PUBLIC_URL + '/img/digital.jpg'}
+            alt="Computer"
+            className="features__img lazy-img"
+          />
+          <div className="features__feature">
+            <div className="features__icon">
+              <svg>
+                <use
+                  xlinkHref={
+                    process.env.PUBLIC_URL + '/img/icons.svg#icon-monitor'
+                  }
+                ></use>
+              </svg>
+            </div>
+            <h5 className="features__header">Easy to use</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+              alias sint quos? Accusantium a fugiat porro reiciendis saepe
+              quibusdam debitis ducimus.
+            </p>
           </div>
-          <h5 class="features__header">Fast conversion</h5>
-          <p>
-            Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
-            inventore ab? Nulla incidunt eius numquam sequi iste pariatur
-            quibusdam!
-          </p>
-        </div>
-        <img
-          src="img/grow-lazy.jpg"
-          data-src="img/grow.jpg"
-          alt="Plant"
-          class="grow features__img lazy-img"
-        />
 
-        <img
-          src="img/card-lazy.jpg"
-          data-src="img/card.jpg"
-          alt="Credit card"
-          class="features__img lazy-img"
-        />
-        <div class="features__feature">
-          <div class="features__icon">
-            <svg>
-              <use xlinkHref="img/icons.svg#icon-credit-card"></use>
-            </svg>
+          <div className="features__feature">
+            <div className="features__icon">
+              <svg>
+                <use
+                  xlinkHref={
+                    process.env.PUBLIC_URL + '/img/icons.svg#icon-trending-up'
+                  }
+                ></use>
+              </svg>
+            </div>
+            <h5 className="features__header">Fast conversion</h5>
+            <p>
+              Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+              inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+              quibusdam!
+            </p>
           </div>
-          <h5 class="features__header">Free to use</h5>
-          <p>
-            Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
-            eveniet consequatur odit quam quos possimus assumenda dicta fuga
-            inventore ab.
-          </p>
+          <img
+            src={process.env.PUBLIC_URL + '/img/fast_conversion.png'}
+            data-src={process.env.PUBLIC_URL + '/img/grow.jpg'}
+            alt="Plant"
+            className="grow features__img lazy-img"
+          />
+
+          <img
+            src={process.env.PUBLIC_URL + '/img/free.png'}
+            data-src={process.env.PUBLIC_URL + '/img/card.png'}
+            alt="Credit card"
+            className="features__img lazy-img"
+          />
+          <div className="features__feature">
+            <div className="features__icon">
+              <svg>
+                <use
+                  xlinkHref={
+                    process.env.PUBLIC_URL + '/img/icons.svg#icon-credit-card'
+                  }
+                ></use>
+              </svg>
+            </div>
+            <h5 className="features__header">Free to use</h5>
+            <p>
+              Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+              eveniet consequatur odit quam quos possimus assumenda dicta fuga
+              inventore ab.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-    <Footer/>
-</div>
+      </section>
+      <Footer />
+    </div>
   )
 }
 

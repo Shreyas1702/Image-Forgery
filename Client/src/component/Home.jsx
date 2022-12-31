@@ -7,11 +7,11 @@ import Footer from './Footer'
 import Reason from './Reason'
 const Home = () => {
   return (
-      <div className="div">
-    <ConvertPage/>
-    <DetailPage/>
-    <Reason/>
-    <Footer />
+    <div className="div">
+      <ConvertPage />
+      <DetailPage />
+      <Reason />
+      <Footer />
     </div>
   )
 }
