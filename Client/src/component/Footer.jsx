@@ -55,7 +55,7 @@ const footer = () => {
         .
       </p>
       <p className="footer_p">
-        Made by : <span> Sahil Shreyas Aakarsh Andre Bilal Shoydon</span>
+        Made by : <span> Shubham Shreyas Amey</span>
       </p>
     </div>
   )

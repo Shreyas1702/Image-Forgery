@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const ConvertPage = () => {
   const inputRef = useRef(null)
@@ -9,19 +10,19 @@ const ConvertPage = () => {
   const [submit, setSubmit] = React.useState('false')
   const [change, setChange] = React.useState('false')
   const [button, setbutton] = React.useState('false')
+    const [preview, setpreview] = React.useState('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
 
   React.useEffect(() => {
     if (submit === true) {
       console.log("Hello World'")
       console.log(uploadedFile)
       const formData = new FormData()
-      formData.append('uploadedFile', uploadedFile)
+      formData.append('file', uploadedFile)
       console.log(uploadedFile)
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/upload',
+        url: 'http://127.0.0.1:5000/upload',
         data: formData,
-        config: { headers: { 'Content-Type': 'multipart/form-data' } },
       }).then((response) =>{
         console.log(response);
         setResponse(response)
@@ -59,8 +60,13 @@ const ConvertPage = () => {
 
   function validateData(event) {
     const { files } = event.target
-    console.log(files[0])
     setLink(files[0])
+    console.log(files[0])
+    // const url = URL.createObjectURL(uploadedFile)
+    // var reader = new FileReader();
+    // var url = reader.readAsDataURL(uploadedFile);
+    // console.log(url)
+    setpreview(URL.createObjectURL(event.target.files[0]));
   }
 
   function clear() {
@@ -74,8 +80,11 @@ const ConvertPage = () => {
     <div className="convert">
       <div className="text">
         <div className="content">
-          <p>{response}</p>
+          <img src={preview} alt="" srcset="" />
         </div>
+        {/* <div className="content2">
+          <img src={preview} alt="" srcset="" />
+        </div> */}
       </div>
       <div className="upload">
         <h1 className="converth1">Image Forgery Detction</h1>
@@ -93,6 +102,7 @@ const ConvertPage = () => {
               style={{ display: button == true ? 'none' : 'block' }}
               className="button"
               type="file"
+              accept='image/*'
               ref={inputRef}
               name="uploadedFile"
               onChange={(e) => validateData(e)}
