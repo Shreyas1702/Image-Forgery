@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import axios from 'axios'
+
 const ConvertPage = () => {
   const inputRef = useRef(null)
 
@@ -10,37 +11,34 @@ const ConvertPage = () => {
   const [button, setbutton] = React.useState('false')
 
   React.useEffect(() => {
-    if (submit == true) {
+    if (submit === true) {
       console.log("Hello World'")
       console.log(uploadedFile)
       const formData = new FormData()
       formData.append('uploadedFile', uploadedFile)
-      console.log(formData)
+      console.log(uploadedFile)
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/audio',
+        url: 'http://localhost:8000/api/upload',
         data: formData,
         config: { headers: { 'Content-Type': 'multipart/form-data' } },
-      })
-        .then((response) => {
-          console.log(response.data)
-          setResponse(response.data)
-          setChange(true)
-          const fileData = JSON.stringify(response.data)
-          const blob = new Blob([fileData], { type: 'text/plain' })
-          const url = URL.createObjectURL(blob)
-          //rest add this button otherwise set state se iske .dowload aur href properties set kar
-          const dowbutton = document.getElementById('dowbutton')
-          dowbutton.download = 'text-info.txt'
-          dowbutton.href = url
-          console.log(url)
-        })
-        .catch((e) => {
-          console.log(e)
-        })
-      console.log(button)
-      setbutton(true)
-      setSubmit(false)
+      }).then((response) =>{
+        console.log(response);
+        setResponse(response)
+      }).catch((e) =>{
+        console.log(e);
+      })  
+    setChange(true)
+    const fileData = JSON.stringify(response.data)
+    const blob = new Blob([fileData], { type: 'text/plain' })
+    const url = URL.createObjectURL(blob)
+    const dowbutton = document.getElementById('dowbutton')
+    dowbutton.download = 'text-info.txt'
+    dowbutton.href = url
+    console.log(url)
+    console.log(button)
+    setbutton(true)
+    setSubmit(false)
     }
 
     if (change == true) {
@@ -80,9 +78,9 @@ const ConvertPage = () => {
         </div>
       </div>
       <div className="upload">
-        <h1 className="converth1">Audio to Text Converter</h1>
+        <h1 className="converth1">Image Forgery Detction</h1>
         <p>
-          Transcribe speech to text. Automatic audio transcription online, in a
+          Image Forgery. Automatic forgery detection, in a
           few clicks
         </p>
         <div>

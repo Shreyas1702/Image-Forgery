@@ -6,21 +6,20 @@ const LandingPage = () => {
       <div className="header__title">
         {/* <!-- <h1 onclick="alert('HTML alert')"> --> */}
         <h1 className="landingh1">
-          Change
+          Image
           {/* <!-- Green highlight effect --> */}
-          <span className="highlight"> Audio</span>
-          to
+          <span className="highlight"> Forgery</span>
+          Detection
           <br />
-          <span className="highlight"> Text</span>
         </h1>
-        <h4>Automatic audio transcription online, in a few clicks</h4>
+        <h4>Automatic image forgery detection, in a few clicks</h4>
         <a href="http://localhost:3000/home" className="btn btn--show-modal">
           {' '}
           Getting Started{' '}
         </a>
         <img
           id="i100"
-          src={process.env.PUBLIC_URL + '/img/collage.jpeg'}
+          src="https://miro.medium.com/v2/resize:fit:540/1*NuQbhB0OWjSGBTF4Wm_p4w.jpeg"
           className="header__img"
           alt="Minimalist bank items"
         />
@@ -37,7 +36,7 @@ const LandingPage = () => {
 
         <div className="features">
           <img
-            src={process.env.PUBLIC_URL + '/img/easy.jpeg'}
+            src="https://www.researchgate.net/publication/267863232/figure/fig1/AS:295453313781775@1447452967373/Example-of-Copy-Move-Forgery.png"
             data-src={process.env.PUBLIC_URL + '/img/digital.jpg'}
             alt="Computer"
             className="features__img lazy-img"
@@ -70,7 +69,7 @@ const LandingPage = () => {
                 ></use>
               </svg>
             </div>
-            <h5 className="features__header">Fast conversion</h5>
+            <h5 className="features__header">Fast checking</h5>
             <p>
               Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
               inventore ab? Nulla incidunt eius numquam sequi iste pariatur
@@ -78,7 +77,7 @@ const LandingPage = () => {
             </p>
           </div>
           <img
-            src={process.env.PUBLIC_URL + '/img/fast_conversion.png'}
+            src="https://pub.mdpi-res.com/information/information-10-00286/article_deploy/html/images/information-10-00286-g017.png?1569445796"
             data-src={process.env.PUBLIC_URL + '/img/grow.jpg'}
             alt="Plant"
             className="grow features__img lazy-img"

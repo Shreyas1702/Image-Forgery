@@ -185,19 +185,97 @@ router.get("/download", (req, res) => {
 
 app.use(fileUpload());
 
-router.post("/upload", (req, res) => {
-  console.log(req.files);
-  let file = { file: binary(req.files.uploadedFile.data) };
-  axios
-    .post("http://127.0.0.1:5000/sum", file, "utf-8")
-    .then((resi) => {
-      console.log(`statusCode: ${resi.status}`);
-      var red = resi.data;
-      res.status(200).json(resi.data);
+// router.post("/upload", (req, res) => {
+//   console.log(req.files);
+//   let file = { file: binary(req.files.uploadedFile.data) };
+//   axios
+//     .post("http://127.0.0.1:5000/sum", file, "utf-8")
+//     .then((resi) => {
+//       console.log(`statusCode: ${resi.status}`);
+//       var red = resi.data;
+//       res.status(200).json(resi.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// });
+
+router.post("/api/upload", async (req, res) => {
+  let file = { file: binary(req.files.uploadedFile.data) }.toString("base64");
+  // const assembly = axios.create({
+  //   baseURL: "https://api.assemblyai.com/v2",
+  //   headers: {
+  //     authorization: "3333997ce0af43fb90d7c7b9c48e3a02",
+  //   },
+  // });
+  // assembly
+  //   .post("/transcript", {
+  //     audio_url: file,
+  //   })
+  //   .then((resi) => {
+  //     console.log(`statusCode: ${resi.status}`);
+  //     var red = resi.data;
+  //     res.status(200).json(resi.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+  let link;
+  let ans = await axios
+    .post(
+      "https://api.assemblyai.com/v2/upload",
+      {
+        audio_base64: file,
+        auto_highlights: true,
+        speaker_labels: true,
+        language_detection: true,
+      },
+      {
+        headers: {
+          authorization: "9f4bb8087e0f4213a1d178e87ed7235b",
+        },
+      }
+    )
+    .then((response) => {
+      console.log(response.data.upload_url);
+      link = response.data.upload_url;
+      // res.send(response.data);
     })
     .catch((error) => {
-      console.error(error);
+      console.log(error);
+      // res.status(500).send("Error transcribing audio");
     });
+  let id;
+  const assembly = axios.create({
+    baseURL: "https://api.assemblyai.com/v2",
+    headers: {
+      authorization: "9f4bb8087e0f4213a1d178e87ed7235b",
+    },
+  });
+  let ans1 = await assembly
+    .post("/transcript", {
+      audio_url: link,
+    })
+    .then((res) => {
+      console.log(res.data.id);
+      id = res.data.id;
+    })
+    .catch((err) => console.error(err));
+
+  console.log(ans1);
+
+  const assembly1 = axios.create({
+    baseURL: "https://api.assemblyai.com/v2",
+    headers: {
+      authorization: "9f4bb8087e0f4213a1d178e87ed7235b",
+    },
+  });
+  const ans2 = await assembly1
+    .get(`/transcript/${id}`)
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+
+  console.log(ans2);
 });
 
 app.use("/", router);

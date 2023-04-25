@@ -3,8 +3,8 @@ import Wave from 'react-wavify'
 const DetailPage = () => {
   return (
     <div className="detail">
-      <h1 className="detailh1">How to Use Converter</h1>
-      <h3>Convert your audio to text in 3 Simple Steps</h3>
+      <h1 className="detailh1">How to Use Detector</h1>
+      <h3>Check your Image in 3 Simple Steps</h3>
       <div className="cards">
         <div className="card1">
           <img
@@ -34,9 +34,9 @@ const DetailPage = () => {
               points: 4,
             }}
           />
-          <h3 style={{ position: 'relative' }}>Upload an Audio File</h3>
+          <h3 style={{ position: 'relative' }}>Upload an Image</h3>
           <p style={{ position: 'relative' }}>
-            Click on Choose file and then select the file to be trnscribed
+            Click on Choose file and then select the image to be checked
           </p>
         </div>
         <div className="card2">
@@ -68,7 +68,7 @@ const DetailPage = () => {
           />
           <h3 style={{ position: 'relative' }}>Press on Submit</h3>
           <p style={{ position: 'relative' }}>
-            Click on the Submit Button to transcribe your audio to text
+            Click on the Submit Button to verify your Iamge
           </p>
         </div>
         <div className="card3">
@@ -99,9 +99,9 @@ const DetailPage = () => {
               points: 4,
             }}
           />
-          <h3 style={{ position: 'relative' }}>Text Ready</h3>
+          <h3 style={{ position: 'relative' }}>Image Verified</h3>
           <p style={{ position: 'relative' }}>
-            Wait for few seconds and your text will be displayed
+            Wait for few seconds and your image will be verified
           </p>
         </div>
       </div>

@@ -995,6 +995,11 @@ input.holder {
     font-size: 4.5rem;
   }
 
+  .navbar img {
+    height: 80px;
+    width: 230px;
+  }
+
   .section {
     padding: 4rem 3rem;
     border-top: 0.1rem solid #ddd;
@@ -1306,6 +1311,11 @@ input.holder {
     padding-top: 2rem;
     font-size: 3rem;
   }
+
+  .navbar img {
+    height: 60px;
+    width: 230px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1371,6 +1381,10 @@ input.holder {
   .cards {
     flex-direction: column;
     height: 200rem;
+  }
+  .navbar img {
+    height: 50px;
+    width: 230px;
   }
   .card1 {
     height: 100rem;

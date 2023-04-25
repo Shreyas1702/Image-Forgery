@@ -4,43 +4,37 @@ const Reason = () => {
   return (
     <div className="reason">
       <h1 className="Reasonh1">
-        Why use Auxtribe to transcribe audio to <br />
-        text:
+        Why use Detector to check your <br />
+        Image:
       </h1>
       <div className="col-1">
         <div className="card-1">
-          <h2>Transcribe Audio Fast</h2>
+          <h2>Verify Image Fast</h2>
           <p>
-            Our online audio to text converter only takes a couple of minutes to
-            work, making it a lot faster than manual transcription or
-            traditional apps that need to be downloaded and installed.
+            Our online detector only takes a couple of minutes to
+            work, making it a lot faster than manual checking 
+            that need to be downloaded and installed.
           </p>
         </div>
         <div className="card-2">
-          <h2>Generate transcripts and subtitles</h2>
+          <h2>View where the Image has been forged</h2>
           <p>
-            Auxtribe lets you save your audio transcript in a variety of
-            formats, including more than five different types of subtitle file,
-            making it a great way to generate perfectly synchronized subtitles
-            for your videos.
+            Detector lets you to view where the original Image is forged and what section of Image is added on the original Image
           </p>
         </div>
       </div>
       <div className="col-2">
         <div className="card-1">
-          <h2>Convert audio to text anywhere</h2>
+          <h2>Image Forgery Detection anywhere</h2>
           <p>
-            Since Auxtribe is browser based, it will run smoothly on any device,
+            Since Detector is browser based, it will run smoothly on any device,
             be it a Mac, a Windows laptop or even a Chromebook.{' '}
           </p>
         </div>
         <div className="card-2">
-          <h2>Transcribe audio to text for free</h2>
+          <h2>Check your Image for free</h2>
           <p>
-            Our automatic audio transcription feature, as well as the rest of
-            our video editing options is available to free accounts as well, so
-            you can experience the power of cloud video editing without paying a
-            cent and decide if it’s good for you.{' '}
+            Our automatic detection feature, 
           </p>
         </div>
       </div>
