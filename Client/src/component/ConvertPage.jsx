@@ -10,7 +10,9 @@ const ConvertPage = () => {
   const [submit, setSubmit] = React.useState('false')
   const [change, setChange] = React.useState('false')
   const [button, setbutton] = React.useState('false')
-    const [preview, setpreview] = React.useState('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
+  const [fake, setfake] = React.useState('00')
+  const [probabilty, setprobabilty] = React.useState('00')
+  const [preview, setpreview] = React.useState('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
 
   React.useEffect(() => {
     if (submit === true) {
@@ -81,6 +83,10 @@ const ConvertPage = () => {
       <div className="text">
         <div className="content">
           <img src={preview} alt="" srcset="" />
+        </div>
+        <div className="ans">
+          <h1>{fake}</h1>
+          <h1>{probabilty}</h1>
         </div>
         {/* <div className="content2">
           <img src={preview} alt="" srcset="" />
