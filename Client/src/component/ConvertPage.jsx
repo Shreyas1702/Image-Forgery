@@ -10,8 +10,9 @@ const ConvertPage = () => {
   const [submit, setSubmit] = React.useState('false')
   const [change, setChange] = React.useState('false')
   const [button, setbutton] = React.useState('false')
-  const [fake, setfake] = React.useState('00')
-  const [probabilty, setprobabilty] = React.useState('00')
+  const [fake, setfake] = React.useState('')
+  const [probabilty, setprobabilty] = React.useState('')
+  const [forged, setforged] = React.useState('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
   const [preview, setpreview] = React.useState('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
 
   React.useEffect(() => {
@@ -26,20 +27,22 @@ const ConvertPage = () => {
         url: 'http://127.0.0.1:5000/upload',
         data: formData,
       }).then((response) =>{
+        setfake(response.data.fake_or_real)
+        setprobabilty(response.data.predss)
         console.log(response);
         setResponse(response)
       }).catch((e) =>{
         console.log(e);
       })  
     setChange(true)
-    const fileData = JSON.stringify(response.data)
-    const blob = new Blob([fileData], { type: 'text/plain' })
-    const url = URL.createObjectURL(blob)
-    const dowbutton = document.getElementById('dowbutton')
-    dowbutton.download = 'text-info.txt'
-    dowbutton.href = url
-    console.log(url)
-    console.log(button)
+    // const fileData = JSON.stringify(response.data)
+    // const blob = new Blob([fileData], { type: 'text/plain' })
+    // const url = URL.createObjectURL(blob)
+    // const dowbutton = document.getElementById('dowbutton')
+    // dowbutton.download = 'text-info.txt'
+    // dowbutton.href = url
+    // console.log(url)
+    // console.log(button)
     setbutton(true)
     setSubmit(false)
     }
@@ -75,22 +78,27 @@ const ConvertPage = () => {
     setbutton(false)
     setResponse('')
     setLink('')
+    setpreview('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
+    setforged('https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png')
+    setprobabilty('')
     inputRef.current.value = null
   }
 
   return (
     <div className="convert">
+    <div className="box">
       <div className="text">
         <div className="content">
           <img src={preview} alt="" srcset="" />
         </div>
-        <div className="ans">
+        <div className="content2">
+          <img src={preview} alt="" srcset="" />
+        </div>
+      </div>
+      <div className="ans">
           <h1>{fake}</h1>
           <h1>{probabilty}</h1>
         </div>
-        {/* <div className="content2">
-          <img src={preview} alt="" srcset="" />
-        </div> */}
       </div>
       <div className="upload">
         <h1 className="converth1">Image Forgery Detction</h1>
@@ -127,14 +135,14 @@ const ConvertPage = () => {
               placeholder="File Name.."
             />
             <br />
-            <a
+            {/* <a
               style={{ display: button == true ? 'block' : 'none' }}
               className="button"
               id="dowbutton"
               type="submit"
             >
               Download File
-            </a>
+            </a> */}
             <input
               style={{
                 display: button == true ? 'block' : 'none',

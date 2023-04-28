@@ -404,13 +404,18 @@ h4 {
   margin: 5rem 5rem 2rem 5rem;
   border-radius: 0.7rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .text .content {
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 50px;
   align-items: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
 }
 
 .ans {
@@ -424,12 +429,14 @@ h4 {
 }
 
 .text .content img {
-  width: 600px;
+  width: 400px;
   height: 400px;
 }
 
 .text .content2 {
   margin-left: 50px;
+  margin-top: 50px;
+  margin-left: 100px;
 }
 
 .text .content2 img {
