@@ -4,7 +4,7 @@ const Reason = () => {
   return (
     <div className="reason">
       <h1 className="Reasonh1">
-        Why use Detector to check your <br />
+        Why use Detectify to check your <br />
         Image:
       </h1>
       <div className="col-1">
@@ -34,7 +34,7 @@ const Reason = () => {
         <div className="card-2">
           <h2>Check your Image for free</h2>
           <p>
-            Our automatic detection feature, 
+            Our automatic detection feature,is free of cost and will let u know that your image is forged or not in seconds
           </p>
         </div>
       </div>

@@ -92,7 +92,7 @@ const ConvertPage = () => {
           <img src={preview} alt="" srcset="" />
         </div>
         <div className="content2">
-          <img src={preview} alt="" srcset="" />
+          <img src={forged} alt="" srcset="" />
         </div>
       </div>
       <div className="ans">

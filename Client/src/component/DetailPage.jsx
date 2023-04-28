@@ -3,7 +3,7 @@ import Wave from 'react-wavify'
 const DetailPage = () => {
   return (
     <div className="detail">
-      <h1 className="detailh1">How to Use Detector</h1>
+      <h1 className="detailh1">How to Use Detectify</h1>
       <h3>Check your Image in 3 Simple Steps</h3>
       <div className="cards">
         <div className="card1">

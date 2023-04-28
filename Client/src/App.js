@@ -77,9 +77,6 @@ function App() {
                     </Link>
                   </li>
                   <hr className="horizontal" />
-                  <li>
-                    <Link onClick={() => logout()}>Logout</Link>
-                  </li>
                 </ul>
               </div>
               <div className="hamburger-menu">
@@ -90,14 +87,8 @@ function App() {
             </div>
 
             <Routes>
-              <Route
-                path="/ai_speech_to_text"
-                exact
-                element={<LandingPage />}
-              ></Route>
+              <Route path="/" exact element={<LandingPage />}></Route>
               <Route path="/home" exact element={<Home />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/signin" element={<SignIn />}></Route>
             </Routes>
           </BrowserRouter>
         </div>
@@ -107,7 +98,7 @@ function App() {
         <div className="App">
           <BrowserRouter className="nav">
             <div className="navbar">
-              <img src={process.env.PUBLIC_URL + "/img/icon.png"}></img>
+              <img src="/img/icon.png"></img>
 
               <div
                 className={showMediaIcons ? "mobile-menu-link" : "links"}
@@ -144,13 +135,6 @@ function App() {
                     </Link>
                   </li>
                   <hr className="horizontal" />
-                  <li>
-                    <Link to="/login">Login</Link>
-                  </li>
-                  <hr className="horizontal" />
-                  <li>
-                    <Link to="/signin">Sign In</Link>
-                  </li>
                 </ul>
               </div>
               <div className="hamburger-menu">
@@ -161,14 +145,7 @@ function App() {
             </div>
 
             <Routes>
-              <Route
-                path="/ai_speech_to_text"
-                exact
-                element={<LandingPage />}
-              ></Route>
               <Route path="/home" exact element={<Home />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/signin" element={<SignIn />}></Route>
             </Routes>
           </BrowserRouter>
         </div>
@@ -176,19 +153,61 @@ function App() {
     }
   };
 
-  function logout() {
-    console.log("logout");
-    axios.get("http://localhost:8000/logout").then((response) => {
-      console.log(response.status);
-      if (response.status == 200) {
-        dispatch({ type: "USER", payload: false });
-      }
-    });
-  }
-
   return (
     <UserContext.Provider value={{ state, dispatch }}>
-      <RenderMenu />
+      <div className="App">
+        <BrowserRouter className="nav">
+          <div className="navbar">
+            <img src={process.env.PUBLIC_URL + "/img/icon.png"}></img>
+
+            <div
+              className={showMediaIcons ? "mobile-menu-link" : "links"}
+              style={{ height: "25rem" }}
+            >
+              <ul>
+                <li>
+                  <Link to="/home">Home</Link>
+                </li>
+                <hr className="horizontal" />
+                <li>
+                  <Link
+                    onClick={() => {
+                      if (window.location.href.match("http://localhost:3000")) {
+                        window.scroll({
+                          top: 800,
+                          behavior: "smooth",
+                        });
+                      } else {
+                        console.log(window.location.href);
+                        // window.location.replace("http://localhost:3000");
+                        setTimeout(() => {
+                          window.scroll({
+                            top: 800,
+                            behavior: "smooth",
+                          });
+                        }, 10000);
+                      }
+                    }}
+                  >
+                    Articles
+                  </Link>
+                </li>
+                <hr className="horizontal" />
+              </ul>
+            </div>
+            <div className="hamburger-menu">
+              <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+                <GiHamburgerMenu />
+              </a>
+            </div>
+          </div>
+
+          <Routes>
+            <Route path="/" exact element={<LandingPage />}></Route>
+            <Route path="/home" exact element={<Home />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </UserContext.Provider>
   );
 }

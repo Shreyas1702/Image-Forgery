@@ -42,7 +42,7 @@ const footer = () => {
       </ul>
       <img
         id="ft_logo"
-        src={process.env.PUBLIC_URL + '/img/icon.png'}
+        src= '/img/icon.png'
         alt="Logo"
         className="footer__logo"
       />
@@ -50,7 +50,7 @@ const footer = () => {
         &copy; Copyright by
         <a className="footer__link twitter-link" target="_blank" href="#">
           {' '}
-          Auxtribe
+          Detectify
         </a>
         .
       </p>
