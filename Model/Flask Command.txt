@@ -1,0 +1,3 @@
+set REPLICATE_API_TOKEN=r8_DJ84fEA8t7oET6jFQiwjDlTPiM4OUdK1Grt9c
+set FLASK_APP=app.py
+flask run
