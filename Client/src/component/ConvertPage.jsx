@@ -29,6 +29,7 @@ const ConvertPage = () => {
       }).then((response) =>{
         setfake(response.data.fake_or_real)
         setprobabilty(response.data.predss)
+        setforged(response.data.region)
         console.log(response);
         setResponse(response)
       }).catch((e) =>{
@@ -101,7 +102,7 @@ const ConvertPage = () => {
         </div>
       </div>
       <div className="upload">
-        <h1 className="converth1">Image Forgery Detction</h1>
+        <h1 className="converth1">Image Forgery Detection</h1>
         <p>
           Image Forgery. Automatic forgery detection, in a
           few clicks
