@@ -29,8 +29,7 @@ const LandingPage = () => {
         <div className="section__title">
           <h2 className="section__description">Articles</h2>
           <h3 className="section__header">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Dignissimos!
+            Want to verify if an image is fake or real? Detectify is your best solution!
           </h3>
         </div>
 
@@ -53,9 +52,7 @@ const LandingPage = () => {
             </div>
             <h5 className="features__header">Easy to use</h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              alias sint quos? Accusantium a fugiat porro reiciendis saepe
-              quibusdam debitis ducimus.
+              Just select the image from popup and click Upload to start.
             </p>
           </div>
 
@@ -71,9 +68,7 @@ const LandingPage = () => {
             </div>
             <h5 className="features__header">Fast checking</h5>
             <p>
-              Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
-              inventore ab? Nulla incidunt eius numquam sequi iste pariatur
-              quibusdam!
+              Get your image forensic results in just a couple of minutes...
             </p>
           </div>
           <img
@@ -101,9 +96,7 @@ const LandingPage = () => {
             </div>
             <h5 className="features__header">Free to use</h5>
             <p>
-              Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
-              eveniet consequatur odit quam quos possimus assumenda dicta fuga
-              inventore ab.
+              This website has no verification charges, you can use it seamlessly as many times as you want.
             </p>
           </div>
         </div>
